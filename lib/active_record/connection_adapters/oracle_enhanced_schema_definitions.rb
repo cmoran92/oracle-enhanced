@@ -156,7 +156,7 @@ module ActiveRecord
     module OracleEnhancedTable
       def self.included(base) #:nodoc:
         base.class_eval do
-          alias_method_chain :references, :foreign_keys
+          #alias_method_chain :references, :foreign_keys
         end
       end
 
