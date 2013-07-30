@@ -35,16 +35,16 @@ module ActiveRecord
     module OracleEnhancedSchemaDefinitions #:nodoc:
       def self.included(base)
         base::TableDefinition.class_eval do
-          include OracleEnhancedTableDefinition
+          #include OracleEnhancedTableDefinition
         end
 
         base::ColumnDefinition.class_eval do
-          include OracleEnhancedColumnDefinition
+          #include OracleEnhancedColumnDefinition
         end
         
         # Available starting from ActiveRecord 2.1
         base::Table.class_eval do
-          include OracleEnhancedTable
+          #include OracleEnhancedTable
         end if defined?(base::Table)
       end
     end
@@ -156,7 +156,7 @@ module ActiveRecord
     module OracleEnhancedTable
       def self.included(base) #:nodoc:
         base.class_eval do
-          #alias_method_chain :references, :foreign_keys
+          alias_method_chain :references, :foreign_keys
         end
       end
 
